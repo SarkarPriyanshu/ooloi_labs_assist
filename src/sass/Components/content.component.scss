@@ -1,0 +1,110 @@
+.content {
+  font-family: var(--font-family);
+  color: #747474;
+  background-color: #f5f5f5;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-rows: 10% 35% 1fr;
+  grid-template-columns: 1fr 50% 1fr;
+  align-content: flex-start;
+  justify-content: center;
+
+  & .content_header {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    & h3 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      line-height: 2.176rem;
+      letter-spacing: 10%;
+      margin-right: 1rem;
+    }
+
+    & small {
+      color: #606060;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1.907rem;
+    }
+  }
+
+  & .content_main {
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    & input {
+      width: 100%;
+      background: #f5f5f5;
+      border: none;
+      padding: 1.5rem 0.5rem;
+      outline: none;
+      border-radius: 0.3rem;
+      border-bottom: 0.25rem solid transparent;
+      margin-bottom: 0.3rem;
+
+      &::placeholder {
+        font-family: var(--font-family);
+      }
+
+      &:hover {
+        background: #ebebeb;
+      }
+
+      &:active {
+        border-bottom: 0.25rem solid #8fc6f3;
+      }
+    }
+
+    & .content_main_suggestion {
+      width: 100%;
+      background-color: #f5f5f5;
+    }
+  }
+
+  & .added_list_items {
+    grid-row: 3/-1;
+    grid-column: 2/3;
+  }
+
+  @media only screen and (max-width: 558px) {
+    & {
+      grid-template-rows: 10% 50% 1fr;
+      grid-template-columns: 1fr 80% 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    & {
+      grid-template-columns: none;
+    }
+  }
+}
+
+.list_item {
+  padding: 5px 7px;
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.added_items {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #8fc6f3;
+
+  & .remove_btn {
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-size: var(--font-family);
+    font-weight: 700;
+  }
+}
